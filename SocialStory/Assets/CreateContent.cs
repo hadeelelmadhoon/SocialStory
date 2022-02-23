@@ -9,12 +9,16 @@ public class CreateContent : MonoBehaviour {
     public MoneyCounter moneyCounter;
     public GameObject checkLightingBtn;
     public GameObject checklist0;
+    public GameObject energyError;
+    public AudioSource buttonAudio;
+    public AudioSource errorAudio;
 
 	void Start () {
 		Button btn = createContentBtn.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
         checkLightingBtn.SetActive(false);
         checklist0.SetActive(false);
+        energyError.SetActive(false);
 	}
 
     bool hasEnergy(int neededEnergy){
@@ -27,7 +31,8 @@ public class CreateContent : MonoBehaviour {
     }
 
 	void TaskOnClick(){
-        if(hasEnergy(3)){
+        if(hasEnergy(6)){
+            buttonAudio.Play();
             // energyBar.SetEnergy(energyBar.GetEnergy() - 3);
             // moneyCounter.SetMoneyCount(moneyCounter.GetMoneyCount() + 50);
             createContentBtnObject.SetActive(false);
@@ -35,6 +40,8 @@ public class CreateContent : MonoBehaviour {
             checklist0.SetActive(true);
         }
         else{
+            energyError.SetActive(true);
+            errorAudio.Play();
             Debug.Log("You don't have enough energy");
         }
 	}

@@ -10,6 +10,8 @@ public class SetupTripod : MonoBehaviour
     public EnergyBar energyBar;
     public GameObject takePhotoBtn;
     public GameObject checklist2;
+    public GameObject checklist1;
+    public AudioSource audio;
 
 	void Start () {
 		Button btn = setupTripodBtn.GetComponent<Button>();
@@ -20,10 +22,12 @@ public class SetupTripod : MonoBehaviour
 	}
 
 	void TaskOnClick(){
-        energyBar.SetEnergy(energyBar.GetEnergy() - 3);
+        audio.Play();
+        energyBar.SetEnergy(energyBar.GetEnergy() - 2);
         tripod.SetActive(true);
         setupTripodBtnObj.SetActive(false);
         takePhotoBtn.SetActive(true);
         checklist2.SetActive(true);
+        checklist1.SetActive(false);
     }
 }

@@ -9,6 +9,8 @@ public class CheckLighting : MonoBehaviour
     public GameObject setupTripodBtn;
     public EnergyBar energyBar;
     public GameObject checklist1;
+    public GameObject checklist0;
+    public AudioSource audio;
 
 	void Start () {
 		Button btn = checkLightingBtn.GetComponent<Button>();
@@ -18,9 +20,11 @@ public class CheckLighting : MonoBehaviour
 	}
 
 	void TaskOnClick(){
-        energyBar.SetEnergy(energyBar.GetEnergy() - 3);
+        audio.Play();
+        energyBar.SetEnergy(energyBar.GetEnergy() - 1);
         checkLightingBtnObj.SetActive(false);
         setupTripodBtn.SetActive(true);
         checklist1.SetActive(true);
+        checklist0.SetActive(false);
     }
 }
