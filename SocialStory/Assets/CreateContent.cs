@@ -4,13 +4,17 @@ using System.Collections;
 
 public class CreateContent : MonoBehaviour {
 	public Button createContentBtn;
+    public GameObject createContentBtnObject;
     public EnergyBar energyBar;
     public MoneyCounter moneyCounter;
+    public GameObject checkLightingBtn;
+    public GameObject checklist0;
 
 	void Start () {
 		Button btn = createContentBtn.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-
+        checkLightingBtn.SetActive(false);
+        checklist0.SetActive(false);
 	}
 
     bool hasEnergy(int neededEnergy){
@@ -24,8 +28,11 @@ public class CreateContent : MonoBehaviour {
 
 	void TaskOnClick(){
         if(hasEnergy(3)){
-            energyBar.SetEnergy(energyBar.GetEnergy() - 3);
-            moneyCounter.SetMoneyCount(moneyCounter.GetMoneyCount() + 50);
+            // energyBar.SetEnergy(energyBar.GetEnergy() - 3);
+            // moneyCounter.SetMoneyCount(moneyCounter.GetMoneyCount() + 50);
+            createContentBtnObject.SetActive(false);
+            checkLightingBtn.SetActive(true);
+            checklist0.SetActive(true);
         }
         else{
             Debug.Log("You don't have enough energy");
