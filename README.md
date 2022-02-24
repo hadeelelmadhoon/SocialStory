@@ -27,12 +27,18 @@ https://user-images.githubusercontent.com/44147485/155454040-c173d6c3-1df3-4324-
 6) The player tries to create more content, but they do not have enough energy
 7) The player gets a message saying they do not have enough energy and receive an error audio
 
-## How to Install
+## How to Run Executable (Requires XCode on a Mac)
+1) Unzip ExecutableBuild.zip
+2) Open Unity-iPhone.xcodeproj
+3) Run game
+
+## How to Install Source Code (Run game on any device that Unity Supports) 
 1) Download the Unity game engine
 2) In the Unity hub, go to installs --> click settings icon on install --> add modules --> install IOS support
-3) Open SocialStory in Unity
-4) Make sure you are on the MainScene (can be found under Assets/Scenes)
-5) Click play 
+3) Download SocialStory (either from Github or Owl)
+4) Open SocialStory in Unity
+5) Make sure you are on the MainScene (can be found under Assets/Scenes)
+6) Click play 
 
 ### Optional install
 1) Download Unity Remote 5 on a mobile IOS device
